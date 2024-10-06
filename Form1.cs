@@ -26,11 +26,30 @@ namespace Students
 
             groups[0].AddStudent("Петухов");
             groups[1].AddStudent("Семенов");
-            groups[2].AddStudent("Никонов");
+            groups[1].AddStudent("Никонов");
+
+            comboBoxSelectAGroup.DataSource = groups;
+            comboBoxSelectAGroup.SelectedIndex = 0;
         }
+
 
         private void AddStudent_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void addGroup_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxNameSelectGroup.Text))
+            {
+                int newId = groups.Count + 1;
+                StudentGroup studentGroup = new StudentGroup(newId,textBoxNameSelectGroup.Text);
+                groups.Add(studentGroup);
+                comboBoxSelectAGroup.DataSource= null;
+                comboBoxSelectAGroup.DataSource= groups;
+                comboBoxSelectAGroup.SelectedItem = studentGroup;
+
+            }
 
         }
     }

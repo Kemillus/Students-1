@@ -104,6 +104,7 @@
             this.addGroup.TabIndex = 6;
             this.addGroup.Text = "Добавить группу";
             this.addGroup.UseVisualStyleBackColor = true;
+            this.addGroup.Click += new System.EventHandler(this.addGroup_Click);
             // 
             // addSudent
             // 
