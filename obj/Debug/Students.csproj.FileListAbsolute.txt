@@ -1,0 +1,10 @@
+E:\Институт\C#\Students\Students\bin\Debug\Students.exe.config
+E:\Институт\C#\Students\Students\bin\Debug\Students.exe
+E:\Институт\C#\Students\Students\bin\Debug\Students.pdb
+E:\Институт\C#\Students\Students\obj\Debug\Students.csproj.AssemblyReference.cache
+E:\Институт\C#\Students\Students\obj\Debug\Students.AddStudent.resources
+E:\Институт\C#\Students\Students\obj\Debug\Students.Properties.Resources.resources
+E:\Институт\C#\Students\Students\obj\Debug\Students.csproj.GenerateResource.cache
+E:\Институт\C#\Students\Students\obj\Debug\Students.csproj.CoreCompileInputs.cache
+E:\Институт\C#\Students\Students\obj\Debug\Students.exe
+E:\Институт\C#\Students\Students\obj\Debug\Students.pdb
