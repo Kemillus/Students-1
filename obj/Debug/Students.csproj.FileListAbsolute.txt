@@ -8,3 +8,13 @@ E:\Институт\C#\Students\Students\obj\Debug\Students.csproj.GenerateResou
 E:\Институт\C#\Students\Students\obj\Debug\Students.csproj.CoreCompileInputs.cache
 E:\Институт\C#\Students\Students\obj\Debug\Students.exe
 E:\Институт\C#\Students\Students\obj\Debug\Students.pdb
+D:\Veronika\Students\bin\Debug\Students.exe.config
+D:\Veronika\Students\bin\Debug\Students.exe
+D:\Veronika\Students\bin\Debug\Students.pdb
+D:\Veronika\Students\obj\Debug\Students.csproj.AssemblyReference.cache
+D:\Veronika\Students\obj\Debug\Students.AddStudent.resources
+D:\Veronika\Students\obj\Debug\Students.Properties.Resources.resources
+D:\Veronika\Students\obj\Debug\Students.csproj.GenerateResource.cache
+D:\Veronika\Students\obj\Debug\Students.csproj.CoreCompileInputs.cache
+D:\Veronika\Students\obj\Debug\Students.exe
+D:\Veronika\Students\obj\Debug\Students.pdb

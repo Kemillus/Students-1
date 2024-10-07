@@ -51,6 +51,7 @@
             this.comboBoxSelectAGroup.Name = "comboBoxSelectAGroup";
             this.comboBoxSelectAGroup.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSelectAGroup.TabIndex = 0;
+            this.comboBoxSelectAGroup.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectAGroup_SelectedIndexChanged);
             // 
             // listOfStudent
             // 
@@ -115,6 +116,7 @@
             this.addSudent.TabIndex = 7;
             this.addSudent.Text = "Добавить студента в группу";
             this.addSudent.UseVisualStyleBackColor = true;
+            this.addSudent.Click += new System.EventHandler(this.addSudent_Click);
             // 
             // textBoxFullName
             // 
@@ -189,7 +191,6 @@
             this.MinimumSize = new System.Drawing.Size(600, 489);
             this.Name = "AddStudent";
             this.Text = "Добавить студента в группу";
-            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

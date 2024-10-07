@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Students
@@ -32,25 +26,61 @@ namespace Students
             comboBoxSelectAGroup.SelectedIndex = 0;
         }
 
-
-        private void AddStudent_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void addGroup_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxNameSelectGroup.Text))
+            if (string.IsNullOrEmpty(labelNameOfGroup.Text))
             {
-                int newId = groups.Count + 1;
-                StudentGroup studentGroup = new StudentGroup(newId,textBoxNameSelectGroup.Text);
-                groups.Add(studentGroup);
-                comboBoxSelectAGroup.DataSource= null;
-                comboBoxSelectAGroup.DataSource= groups;
-                comboBoxSelectAGroup.SelectedItem = studentGroup;
-
+                MessageBox.Show("10X");
+                return;
             }
 
+            int newId = groups.Count + 1;
+            StudentGroup studentGroup = new StudentGroup(newId, labelNameOfGroup.Text);
+            groups.Add(studentGroup);
+            labelNameOfGroup.Text = null;
+            UpdateComboBox(groups);
+        }
+
+        private void UpdateComboBox(List<StudentGroup> groups)
+        {
+            comboBoxSelectAGroup.DataSource = null;
+            comboBoxSelectAGroup.DataSource = groups;
+            comboBoxSelectAGroup.SelectedIndex = groups.Count - 1;
+        }
+
+        private void comboBoxSelectAGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSelectAGroup.SelectedIndex < 0)
+            {
+                return;
+            }
+
+            UpdateListOfStudents(groups[comboBoxSelectAGroup.SelectedIndex].Students);
+            textBoxNameSelectGroup.Text = comboBoxSelectAGroup.Text;
+            textBoxGroupID.Text = groups[comboBoxSelectAGroup.SelectedIndex].Id.ToString();
+        }
+
+        private void UpdateListOfStudents(List<string> students)
+        {
+            listOfStudent.Items.Clear();
+
+            foreach (var item in students)
+            {
+                listOfStudent.Items.Add(item);
+            }
+        }
+
+        private void addSudent_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxFullName.Text))
+            {
+                MessageBox.Show("Введите ФИО");
+                return;
+            }
+
+            groups[comboBoxSelectAGroup.SelectedIndex].AddStudent(textBoxFullName.Text);
+            textBoxFullName.Text = null;
+            UpdateListOfStudents(groups[comboBoxSelectAGroup.SelectedIndex].Students);
         }
     }
 }
