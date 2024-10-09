@@ -33,7 +33,7 @@
             this.selectAGroup = new System.Windows.Forms.Label();
             this.labelListOfStudent = new System.Windows.Forms.Label();
             this.nameOfGroup = new System.Windows.Forms.Label();
-            this.labelNameOfGroup = new System.Windows.Forms.TextBox();
+            this.textBoxNameOfGroup = new System.Windows.Forms.TextBox();
             this.addGroup = new System.Windows.Forms.Button();
             this.addSudent = new System.Windows.Forms.Button();
             this.textBoxFullName = new System.Windows.Forms.TextBox();
@@ -42,6 +42,8 @@
             this.GroupID = new System.Windows.Forms.Label();
             this.nameSelectGroup = new System.Windows.Forms.Label();
             this.labelFullName = new System.Windows.Forms.Label();
+            this.buttonChangeGroup = new System.Windows.Forms.Button();
+            this.buttonChangeStudent = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxSelectAGroup
@@ -90,16 +92,16 @@
             this.nameOfGroup.TabIndex = 4;
             this.nameOfGroup.Text = "Введите название группы :";
             // 
-            // labelNameOfGroup
+            // textBoxNameOfGroup
             // 
-            this.labelNameOfGroup.Location = new System.Drawing.Point(214, 149);
-            this.labelNameOfGroup.Name = "labelNameOfGroup";
-            this.labelNameOfGroup.Size = new System.Drawing.Size(100, 20);
-            this.labelNameOfGroup.TabIndex = 5;
+            this.textBoxNameOfGroup.Location = new System.Drawing.Point(214, 149);
+            this.textBoxNameOfGroup.Name = "textBoxNameOfGroup";
+            this.textBoxNameOfGroup.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNameOfGroup.TabIndex = 5;
             // 
             // addGroup
             // 
-            this.addGroup.Location = new System.Drawing.Point(214, 214);
+            this.addGroup.Location = new System.Drawing.Point(214, 175);
             this.addGroup.Name = "addGroup";
             this.addGroup.Size = new System.Drawing.Size(100, 54);
             this.addGroup.TabIndex = 6;
@@ -110,7 +112,7 @@
             // addSudent
             // 
             this.addSudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addSudent.Location = new System.Drawing.Point(380, 214);
+            this.addSudent.Location = new System.Drawing.Point(383, 175);
             this.addSudent.Name = "addSudent";
             this.addSudent.Size = new System.Drawing.Size(100, 54);
             this.addSudent.TabIndex = 7;
@@ -161,18 +163,40 @@
             // 
             this.labelFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelFullName.AutoSize = true;
-            this.labelFullName.Location = new System.Drawing.Point(377, 133);
+            this.labelFullName.Location = new System.Drawing.Point(380, 133);
             this.labelFullName.Name = "labelFullName";
             this.labelFullName.Size = new System.Drawing.Size(130, 13);
             this.labelFullName.TabIndex = 13;
             this.labelFullName.Text = "Введите ФИО студента:";
             this.labelFullName.UseWaitCursor = true;
             // 
+            // buttonChangeGroup
+            // 
+            this.buttonChangeGroup.Location = new System.Drawing.Point(214, 235);
+            this.buttonChangeGroup.Name = "buttonChangeGroup";
+            this.buttonChangeGroup.Size = new System.Drawing.Size(100, 56);
+            this.buttonChangeGroup.TabIndex = 14;
+            this.buttonChangeGroup.Text = "Изменить группу";
+            this.buttonChangeGroup.UseVisualStyleBackColor = true;
+            this.buttonChangeGroup.Click += new System.EventHandler(this.buttonChangeGroup_Click);
+            // 
+            // buttonChangeStudent
+            // 
+            this.buttonChangeStudent.Location = new System.Drawing.Point(383, 235);
+            this.buttonChangeStudent.Name = "buttonChangeStudent";
+            this.buttonChangeStudent.Size = new System.Drawing.Size(100, 56);
+            this.buttonChangeStudent.TabIndex = 15;
+            this.buttonChangeStudent.Text = "Переименовать студента";
+            this.buttonChangeStudent.UseVisualStyleBackColor = true;
+            this.buttonChangeStudent.Click += new System.EventHandler(this.buttonChangeStudent_Click);
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 450);
+            this.Controls.Add(this.buttonChangeStudent);
+            this.Controls.Add(this.buttonChangeGroup);
             this.Controls.Add(this.labelFullName);
             this.Controls.Add(this.nameSelectGroup);
             this.Controls.Add(this.GroupID);
@@ -181,7 +205,7 @@
             this.Controls.Add(this.textBoxFullName);
             this.Controls.Add(this.addSudent);
             this.Controls.Add(this.addGroup);
-            this.Controls.Add(this.labelNameOfGroup);
+            this.Controls.Add(this.textBoxNameOfGroup);
             this.Controls.Add(this.nameOfGroup);
             this.Controls.Add(this.labelListOfStudent);
             this.Controls.Add(this.selectAGroup);
@@ -203,7 +227,7 @@
         private System.Windows.Forms.Label selectAGroup;
         private System.Windows.Forms.Label labelListOfStudent;
         private System.Windows.Forms.Label nameOfGroup;
-        private System.Windows.Forms.TextBox labelNameOfGroup;
+        private System.Windows.Forms.TextBox textBoxNameOfGroup;
         private System.Windows.Forms.Button addGroup;
         private System.Windows.Forms.Button addSudent;
         private System.Windows.Forms.TextBox textBoxFullName;
@@ -212,6 +236,8 @@
         private System.Windows.Forms.Label GroupID;
         private System.Windows.Forms.Label nameSelectGroup;
         private System.Windows.Forms.Label labelFullName;
+        private System.Windows.Forms.Button buttonChangeGroup;
+        private System.Windows.Forms.Button buttonChangeStudent;
     }
 }
 

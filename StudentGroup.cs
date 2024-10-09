@@ -8,8 +8,8 @@ namespace Students
 {
     internal class StudentGroup : Group
     {
-        public List<string> Students { get; set; }    
-        public StudentGroup(int id,string name): base(id,name) 
+        public List<string> Students { get; set; }
+        public StudentGroup(int id, string name) : base(id, name)
         {
             Students = new List<string>();
         }
@@ -19,6 +19,15 @@ namespace Students
             Students.Add(studentsName);
         }
 
+        public void ChangeStudent(string newNameOfStudent, int indexStudent)
+        {
+            if (string.IsNullOrEmpty(newNameOfStudent) || indexStudent<0)
+            {
+                return;
+            }
+
+            Students[indexStudent] = newNameOfStudent; 
+        }
     }
-    
+
 }

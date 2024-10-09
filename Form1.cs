@@ -28,16 +28,16 @@ namespace Students
 
         private void addGroup_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(labelNameOfGroup.Text))
+            if (string.IsNullOrEmpty(textBoxNameOfGroup.Text))
             {
                 MessageBox.Show("10X");
                 return;
             }
 
             int newId = groups.Count + 1;
-            StudentGroup studentGroup = new StudentGroup(newId, labelNameOfGroup.Text);
+            StudentGroup studentGroup = new StudentGroup(newId, textBoxNameOfGroup.Text);
             groups.Add(studentGroup);
-            labelNameOfGroup.Text = null;
+            textBoxNameOfGroup.Text = null;
             UpdateComboBox(groups);
         }
 
@@ -79,6 +79,31 @@ namespace Students
             }
 
             groups[comboBoxSelectAGroup.SelectedIndex].AddStudent(textBoxFullName.Text);
+            textBoxFullName.Text = null;
+            UpdateListOfStudents(groups[comboBoxSelectAGroup.SelectedIndex].Students);
+        }
+
+        private void buttonChangeGroup_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxNameOfGroup.Text))
+            {
+                MessageBox.Show("Введите название группы");
+                return;
+            }
+
+            groups[comboBoxSelectAGroup.SelectedIndex].Name = textBoxNameOfGroup.Text;
+            UpdateComboBox(groups);
+        }
+
+        private void buttonChangeStudent_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBoxFullName.Text) || listOfStudent.SelectedItem == null)
+            {
+                MessageBox.Show("Введите ФИО и выберите студента для изменения");
+                return;
+            }
+
+            groups[comboBoxSelectAGroup.SelectedIndex].ChangeStudent(textBoxFullName.Text, listOfStudent.SelectedIndex);
             textBoxFullName.Text = null;
             UpdateListOfStudents(groups[comboBoxSelectAGroup.SelectedIndex].Students);
         }
